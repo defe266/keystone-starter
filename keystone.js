@@ -39,8 +39,8 @@ keystone.init({
 	
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
-	'views': 'templates/views',
-	'view engine': 'jade',
+	//'views': 'templates/views',
+	//'view engine': 'jade',
 	
 	//'emails': 'templates/emails',
 	
@@ -70,13 +70,13 @@ if (!keystone.get('cookie secret')) {
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely
 // for each request) should be added to ./routes/middleware.js
-
+/*
 keystone.set('locals', {
 	_: require('underscore'),
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable
-});
+});*/
 
 // Load your project's Routes
 
