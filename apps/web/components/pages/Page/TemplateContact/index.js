@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import submit from '../../../../actions/Contact/submit'
+import submit from '../../../../actions/Forms/contact_submit'
 
 //import BlockHTML from '../../../atoms/BlockHTML'
 import TextI18n from '../../../atoms/TextI18n'

@@ -1,17 +1,18 @@
 var webpack = require('webpack');
 var path = require('path');
 var env = require('node-env-file');
+var fs = require('fs');
 
 env(__dirname + '/.env');
 
 
 var entry = {};
 
-fs.readdirSync(path.resolve(__dirname, '../apps')).forEach(function(fld) {
+fs.readdirSync(path.resolve(__dirname, './apps')).forEach(function(fld) {
 
   if(fld.indexOf('.') == -1){//# fix for .DS_store
 
-    apps[fld] = [
+    entry[fld] = [
           'webpack-dev-server/client?http://localhost:'+process.env.PORT_DEV,
           'webpack/hot/only-dev-server',
           "babel-polyfill",

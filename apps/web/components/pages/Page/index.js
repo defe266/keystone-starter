@@ -77,7 +77,7 @@ export default connect((state, ownProps) => {
 
   return Object.assign({}, state.page, {
 
-    homeID : state.positions.data.home._id,
+    homeID : state.positions.data.home ? state.positions.data.home._id : null,
     lang: state.i18nState.lang
   });
 

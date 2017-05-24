@@ -38,8 +38,8 @@ var Footer = React.createClass({
 
 								<div className="Footer__widget">
 									<h3 className="Footer__widget__title">Atención al cliente</h3>
-									<Icon name="phone"/> +34 659 419 450<br/>
-									<Icon name="envelope"/> info@valthorens.es
+									<Icon name="phone"/> +34 XXXX<br/>
+									<Icon name="envelope"/> XXXX
 								</div>
 
 								<div className="Footer__widget">
@@ -130,7 +130,7 @@ var Footer = React.createClass({
 
 					<div className="container">
 						<div className="pull-left">
-							Valthorens.es 2017
+						 2017
 						</div>
 
 

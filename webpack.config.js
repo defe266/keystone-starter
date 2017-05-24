@@ -1,17 +1,17 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
-
+var fs = require('fs');
 
 
 
 var entry = {};
 
-fs.readdirSync(path.resolve(__dirname, '../apps')).forEach(function(fld) {
+fs.readdirSync(path.resolve(__dirname, './apps')).forEach(function(fld) {
 
   if(fld.indexOf('.') == -1){//# fix for .DS_store
 
-    apps[fld] = [
+    entry[fld] = [
           "babel-polyfill",
           './apps/'+fld+'/client.js'
       ]

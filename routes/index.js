@@ -39,12 +39,25 @@ var routes = {
 exports = module.exports = function(app) {
 
 
+	
+
 	app.use(sharify);
 
 
 	//# Supports imgs transformations
 	app.get('/uploads/*', routes.helpers.imageTransforms);
 
+	//# API
+
+	app.get('/api/positions', routes.api.position.list);
+	app.get('/api/menus', routes.api.menu.list);
+
+
+	app.get('/api/pages', routes.api.page.list);
+	app.get('/api/pages/:id', routes.api.page.get);
+
+
+	app.post('/api/form/contact', routes.api.forms.contact);
 
 	//# APPS 
 	app.get('/*', routes.apps.web);
