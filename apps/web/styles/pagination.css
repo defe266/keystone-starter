@@ -1,0 +1,26 @@
+
+
+.pagination > li > a, .pagination > li > span{
+  border-radius: 0;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span{
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span{
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > span{
+
+  opacity: 0.5;
+}
+
+
+.pagination-split > li > a, .pagination-split > li > span{
+  border-radius: 2px;
+  margin: 0 2px;
+}

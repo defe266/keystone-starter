@@ -1,0 +1,26 @@
+/*@import 'styles/base.css';
+@import 'styles/grid.css';
+@import 'styles/form.css';
+@import 'styles/buttons.css';
+@import 'styles/nav.css';
+@import 'styles/alert.css';
+@import 'styles/pagination.css';
+@import 'styles/datepicker.css';
+@import 'styles/slider.css';
+@import 'styles/reactTaggerInput.css';
+@import 'styles/formBlock.css';
+@import 'styles/misc.css';*/
+
+/*
+.react-datepicker__input-container{
+	width: 100%;
+}*/
+
+@import '../styles/base.css';
+@import '../styles/form.css';
+@import '../styles/buttons.css';
+@import '../styles/alert.css';
+@import '../styles/datepicker.css';
+@import '../styles/sliders.css';
+@import '../styles/block.css';
+@import '../styles/misc.css';

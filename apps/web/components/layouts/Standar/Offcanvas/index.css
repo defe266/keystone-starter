@@ -1,0 +1,30 @@
+.Offcanvas ul{
+	list-style: none;
+	margin: 0;
+	padding:0;
+}
+
+.Offcanvas ul > li > a{
+	padding: 15px 20px;
+	display: block;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+.Offcanvas ul > li > a:hover{
+	color: #02ceff;
+}
+
+/*
+.Offcanvas .ul .UserPreview__avatarHolder{
+	border-color: #fff;
+	color: rgba(255,255,255,0.5);
+	-webkit-transition: border .2s ease 0s,box-shadow .2s ease 0s,color .2s ease 0s;
+    transition: border .2s ease 0s,box-shadow .2s ease 0s,color .2s ease 0s;
+}
+
+.Offcanvas .ul > li > a:hover .UserPreview__avatarHolder{
+	border-color: #02ceff;
+	box-shadow: 0 0 0 1px #02ceff;
+	
+}*/

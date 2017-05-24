@@ -1,0 +1,28 @@
+.alert{
+  border-radius: 2px;
+  border-width: 2px;
+}
+
+.alert-info{
+  color: #0C9ADB;
+  background-color: #E7F4FB;
+  border-color: #0C9ADB;
+}
+
+.alert-success{
+  color: #6CCE46;
+  background-color: #EAFEF0;
+  border-color: #6FDA75;
+}
+
+.alert-warning{
+  color: #FD9A53;
+  background-color: #FFF2E9;
+  border-color: #FD9A53;
+}
+
+.alert-danger{
+  color: #C5474F;
+  background-color: #F8ECEC;
+  border-color: #C5474F;
+}

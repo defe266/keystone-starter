@@ -1,0 +1,118 @@
+.color-twitter{
+  color: #1B94DF;
+}
+
+.color-facebook{
+  color: #3A5898;
+}
+
+.color-google,
+.color-google-plus,
+.color-googleplus{
+  color: #D95231;
+}
+
+.color-youtube{
+  color: #EE1C1B;
+}
+
+.color-linkedin{
+  color: #1B94DF;
+}
+
+.color-instagram{
+  color: #AB3990;
+}
+
+
+
+.color-listening{
+
+  color: #70CD4F;
+}
+
+
+.background-twitter{
+  background: #1B94DF;
+}
+
+.background-facebook{
+  background: #3A5898;
+}
+
+.background-google,
+.background-google-plus,
+.background-googleplus{
+  background: #D95231;
+}
+
+
+
+
+.form-control.readOnlyFix{
+  background-color: #fff;
+}
+
+
+.noMargin{
+  margin: 0;
+}
+
+.masonryRowFix{
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+
+
+.text-warning {
+    color: #EA7D42;
+}
+
+
+.closeIcon{
+  height: 24px;
+    width: 30px;
+    display: block;
+}
+
+.closeIcon::before {
+    transform: rotate(45deg);
+}
+
+.closeIcon::before, .closeIcon::after {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 3px;
+    content: "";
+    height: 100%;
+    left: 50%;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    width: 2px;
+}
+
+.closeIcon::after {
+    transform: rotate(-45deg);
+}
+
+.closeIcon::before, .closeIcon::after {
+    background: #fff;
+    border-radius: 3px;
+    content: "";
+    height: 100%;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    width: 2px;
+}
+
+
+
+@media (max-width: 767px) {
+
+  .masonryColFix{
+    width: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+@media (max-width: 767px) {
+
+	.TemplateContact__form{
+		margin-top: 40px;	
+	}
+
+	.TemplateContact .MarkerMap{
+        height: 250px;
+    }
+}
+
+

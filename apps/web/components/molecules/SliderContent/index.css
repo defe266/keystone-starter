@@ -1,0 +1,32 @@
+.SliderContent{
+	margin-bottom: 55px;
+}
+
+.SliderContent .carousel-indicators {
+    /*margin: 40px auto auto;
+    position: static;*/
+    bottom: -55px;
+}
+
+.SliderContent .carousel-control {
+    background: none;
+    width: 40px;
+}
+
+.SliderContent  .item{
+	padding: 0 80px;
+}
+
+.SliderContent  .carousel-inner-container{
+	position: relative;
+}
+
+/*
+.SliderContent .carousel-inner {
+    position: static;
+    height: auto;
+}*/
+/*
+.carousel-inner > .next, .carousel-inner > .prev{
+		position: static;
+}*/

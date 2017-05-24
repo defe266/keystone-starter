@@ -1,0 +1,16 @@
+.block{
+	background: #fff;
+	border-radius: 2px;
+	border: 1px solid #ddd;
+	color: #7B7C7B;
+	line-height: 25px;
+    padding: 20px;
+}
+
+.block_title{
+	color: #000;
+	margin: 0 0 10px 0;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'gibson-semibold';
+}

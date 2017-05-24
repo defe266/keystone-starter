@@ -1,0 +1,82 @@
+.ShareIcons{
+					
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.ShareIcons li{
+	display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+
+
+.ShareIcons i{
+	
+	font-size: 18px;
+}
+
+.ShareIcons a{
+	color: #A6A6A6;
+}
+
+
+.ShareIcons.colored .ShareIcons__facebook a{
+	color: #4463A2;
+}
+
+.ShareIcons.colored .ShareIcons__twitter a{
+	color: #69B2E1;
+}
+
+.ShareIcons.colored .ShareIcons__google a{
+	color: #CB3E2B;
+}
+
+.ShareIcons.colored .ShareIcons__linkedin a{
+	color: #0075B6;
+}
+
+
+.ShareIcons.bordered li{
+	
+    border-radius: 50%;
+    color: #fff;
+    height: 32px;
+    width: 32px;
+    line-height: 36px;
+    position: relative;
+}
+
+.ShareIcons.bordered li a{
+	color: #fff;
+    display: block;
+    text-align: center;
+}
+
+.ShareIcons.bordered .ShareIcons__count{
+	background: none repeat scroll 0 0 #444;
+    bottom: 0;
+    font-size: 9px;
+    line-height: 9px;
+    padding: 2px 3px;
+    position: absolute;
+    right: 0;
+}
+
+.ShareIcons__facebook{
+	background: #4463a2;
+}
+
+.ShareIcons__twitter{
+	background: #69B2E1;
+}
+
+.ShareIcons__google{
+	background: #CB3E2B;
+}
+
+.ShareIcons__linkedin{
+	background: #0075B6;
+}

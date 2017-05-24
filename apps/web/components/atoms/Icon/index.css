@@ -1,0 +1,22 @@
+/*.Icon{
+	display: inline-block;
+    vertical-align: middle;
+    }*/
+
+/*[class^="icon-"], [class*=" icon-"]*/
+.Icon{
+
+	line-height: inherit;
+}
+
+.Icon.fa-spin{
+	display: inline-block;
+	line-height: 1;
+    /*vertical-align: middle;*/
+}
+
+/*Prevent load fontawsome font*/
+.fa {
+  
+  font-family: 'icons' !important;
+}

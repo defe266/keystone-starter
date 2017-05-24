@@ -1,0 +1,154 @@
+/*@import 'https://fonts.googleapis.com/css?family=PT+Sans:400,700';*/
+
+
+@font-face {
+    font-family: 'gibson-semibold';
+    src: url('../fonts/gibson/gibson-semibold-webfont.eot');
+    src: url('../fonts/gibson/gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gibson/gibson-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/gibson/gibson-semibold-webfont.woff') format('woff'),
+         url('../fonts/gibson/gibson-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/gibson/gibson-semibold-webfont.svg#gibsonsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {
+    font-family: 'gibson';
+    src: url('../fonts/gibson/gibson-webfont.eot');
+    src: url('../fonts/gibson/gibson-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gibson/gibson-webfont.woff2') format('woff2'),
+         url('../fonts/gibson/gibson-webfont.woff') format('woff'),
+         url('../fonts/gibson/gibson-webfont.ttf') format('truetype'),
+         url('../fonts/gibson/gibson-webfont.svg#gibsonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*### General ###*/
+
+html{
+  background: #EBEFF5;
+}
+
+body{
+
+  font-family: "gibson",sans-serif;
+  color: #6c6c6c;
+  background: transparent;
+}
+
+/*
+#print_canvas{
+
+  display: none;
+}
+*/
+
+
+a, .btn-link{
+  color: #00B4EA;
+  cursor: pointer;
+}
+
+a:focus, a:hover,
+.btn-link:hover, .btn-link:focus{
+
+  color: #02ceff;
+  text-decoration: none;
+}
+
+/*
+h1,h2{
+  font-family: 'gibson-semibold';
+  }*/
+
+.draggable{
+  cursor: move; /* fallback if grab cursor is unsupported */
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+    
+.draggable--active > div{
+  color: #80869A;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.containerStandar{
+  padding: 50px 0;
+}
+
+
+.headerStandar{
+  margin-bottom: 40px;
+}
+
+.titleStandar{
+  color: #00B5EC;
+  margin: 0;
+  font-size: 26px;
+  line-height: 26px;
+  font-weight: bold;
+}
+
+
+.titleStandar__subtitle{
+  color: #888;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+
+
+
+@media (max-width: 1200px){
+
+
+}
+
+@media (max-width: 992px){
+
+
+}
+
+
+@media (max-width: 767px) {
+
+
+
+}
+
+
+@media (max-width: 600px) {
+
+  
+}
+
+@media (max-width: 480px) {
+
+
+
+}
+
+
+
+
+/*
+
+@media print{
+
+    body { 
+      font: 10pt Verdana, Geneva, Arial, Helvetica, sans-serif; 
+      background-color: #ffffff; 
+    } 
+}
+*/

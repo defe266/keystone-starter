@@ -1,0 +1,26 @@
+.Result{
+  text-align: center;
+  color: #888888;
+  padding: 50px 0;
+  font-size: 24px;
+}
+
+.Result--size-sm{
+	padding: 30px 0;
+	font-size: 18px;
+}
+
+.Result--size-xs{
+	padding: 16px 0;
+	font-size: 16px;
+}
+
+
+.Result--left{
+	text-align: left;
+}
+
+
+.Result--right{
+	text-align: right;
+}

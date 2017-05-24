@@ -1,0 +1,24 @@
+.formBlock{
+	background: #fff;
+	border: 1px solid #D1D5DA;
+	max-width: 750px;
+}
+
+.formBlock__header{
+	background: #DCEFF8;
+	color: #1B9CD8;
+	padding: 10px 15px;
+	border-bottom: 1px solid #D1D5DA;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.formBlock__body{
+	padding: 30px 15px;
+}
+
+.formBlock__footer{
+	padding: 15px;
+	border-top: 1px solid #D1D5DA;
+	text-align: right;
+}

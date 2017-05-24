@@ -1,0 +1,37 @@
+.NumberPlusMinus__btn{
+
+	width: 20px;
+	/*float: left;*/
+	color: #00B4EB;
+	font-size: 24px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.NumberPlusMinus__btn:hover{
+	color: #00C2FF
+}
+
+.NumberPlusMinus__minus{
+
+}
+
+.NumberPlusMinus__plus{
+
+}
+
+
+.NumberPlusMinus__value{
+	/*float: left;*/
+	display: inline-block;
+	font-size: 24px;
+	padding: 0 10px;
+	color: #000;
+	font-family: 'gibson-semibold';
+}
+
+
+.NumberPlusMinus--zero .NumberPlusMinus__minus{
+	opacity: 0.2;
+	cursor: default;
+}

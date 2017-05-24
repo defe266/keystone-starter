@@ -1,0 +1,97 @@
+
+.BannerCookies{
+
+    bottom: 10px;
+    left: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;   /*99999999*/
+    /*background: rgba(255,255,255,0.95);*/
+    
+    max-width: 495px;
+    padding: 0 12px;
+
+/*    font-family: Helvetica,arial, sans-serif;*/
+}
+
+
+.BannerCookies__content{
+	
+	
+	color: #657077;
+	/*max-width: 900px;
+	margin: auto;
+	width: calc(100% - 300px);*/
+	background: #FEFEFF;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    
+    font-size: 12px;
+    line-height: 16px;
+    position: relative;
+   	padding: 4px 30px 4px 10px;
+
+}
+
+/*
+.BannerCookies__text_container{
+	float: left;
+	width: calc(100% - 62px);
+}
+
+
+.BannerCookies__button_container{
+	float: left;
+	text-align: center;
+	width: 62px;
+}*/
+
+.BannerCookies__button{
+	
+	font-size: 15px;
+	color:#224B6E;
+	position: absolute;
+	display: block;
+	right: 15px;
+	top: 50%;
+	transform: translate(0,-50%);
+	cursor:pointer;
+
+}
+
+
+@media (max-width:800px){
+
+
+/*
+@media (max-width: 992px){
+@media (max-width:767px){*/
+
+
+	.BannerCookies{
+
+		max-width: 100%;
+	    
+    }
+
+	/*.BannerCookies__content{
+		width: 100%;
+		padding-bottom: 60px;
+		text-align: center;
+	}*/
+	/*
+	.BannerCookies__text_container{
+		float: none;
+		width: 100%;
+	}
+
+
+
+
+	.BannerCookies__button_container{
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding-top: 5px;
+	}*/
+}
