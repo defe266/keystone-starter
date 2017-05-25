@@ -5,7 +5,6 @@ require('dotenv').load();
 // Require keystone
 var keystone = require('keystone');
 var sharify = require('sharify');
-var ip = require('ip');
 var config = require('./config.js');
 
 
