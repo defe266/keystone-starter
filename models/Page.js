@@ -14,7 +14,10 @@ var Page = new keystone.List('Page', {
 
 Page.add(
 	{
-		
+		state: { label: "Estado de publicación", type: Types.Select, default: 'publish', options: [
+			{ label: 'Publicado', value: 'publish' },
+			{ label: 'Borrador', value: 'draft' }
+		]},
 		title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang, required: true, initial: true },
 		position: { label: "Posición especial", type: Types.Select, options: 'none, home, cookies', default: "none"},
 		createdAt: { label: "Creado el", type: Date, default: Date.now },
@@ -76,5 +79,5 @@ Page.schema.virtual('content.full').get(function() {
 });*/
 
 
-Page.defaultColumns = 'title, position createdAt';//state|20%, author|20%, createdAt|20%
+Page.defaultColumns = 'title position state createdAt';//state|20%, author|20%, createdAt|20%
 Page.register();

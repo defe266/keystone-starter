@@ -11,21 +11,20 @@ module.exports.get = function(req, res, next){//, keystone.middleware.api
 
 	if(req.query.byslug){
 
-		keystone.list('Page').model.findOne({key : req.params.id}).then((item) => {
-
-			if(!item) return res.send(404)
-
-
-			res.json(keystone.list('Page').getData(item));
-
-		}).catch(next)
+		var query = keystone.list('Page').model.findOne({key : req.params.id, state: {$in : [null, 'publish']}});
 
 	}else{
 
-		req.list = keystone.list('Page');
-
-		apiItemGet(req,res)	
+		var query = keystone.list('Page').model.findOne({_id : req.params.id, state: {$in : [null, 'publish']}});
 	}
+
+	query.then((item) => {
+
+		if(!item) return res.send(404)
+
+		res.json( keystone.list('Page').getData(item) );
+
+	}).catch(next)
 }
 
 module.exports.list = function(req, res, next){//, keystone.middleware.api
