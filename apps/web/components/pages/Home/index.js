@@ -25,7 +25,6 @@ var Home = React.createClass({
 
     const props = this.props;
     const page = props.page;
-    const resources = props.resources;
 
     if(!props.loading && !page) return <h1>¡Configura una página de inicio!</h1>
 
@@ -72,9 +71,8 @@ Home.fetchData = (location, params, req) => {
   }
 }*/
 
-export default Home;
 
-/*
+
 export default connect((state, ownProps) => {
 
   
@@ -82,8 +80,7 @@ export default connect((state, ownProps) => {
   return {
     loading: state.positions.loading,
     page : state.positions.data.home,
-    resources: state.home
+    //resources: state.home
   }
 
-})(Home)*/
-
+})(Home)
