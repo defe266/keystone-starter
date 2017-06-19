@@ -43,6 +43,9 @@ exports = module.exports = function(app) {
 
 	app.use(sharify);
 
+	//# 301 redirect: www.* --> *
+	app.all('*',routes.helpers.removeWWW);
+
 
 	//# Supports imgs transformations
 	app.get('/uploads/*', routes.helpers.imageTransforms);
