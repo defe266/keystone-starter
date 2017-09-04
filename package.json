@@ -7,7 +7,7 @@
     "keystone": "https://github.com/defe266/keystone/tarball/master",
     "connect-mongo": "~0.8.1",
     "dotenv": "1.1.0",
-    "image-steam": "0.34.3",
+    "image-steam": "0.37.1",
     "moment": "2.17.1",
     "babel-core": "*",
     "babel-preset-es2015": "*",
@@ -71,7 +71,9 @@
   },
   "scripts": {
     "start": "node keystone.js",
-    "unlink": "npm unlink keystone"
+    "unlink": "npm unlink keystone",
+    "extract": "i18n_extract --source=apps",
+    "import": "i18n_import --translations=."
   },
   "main": "keystone.js"
 }
