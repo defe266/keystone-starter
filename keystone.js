@@ -13,6 +13,8 @@ require('babel-core/register')({
     presets: ['es2015','stage-0','react']
 })
 
+require('rootpath')(); //# let absolute access for require in node
+
 //# Ignore CSS requires, its only for the client in the share code
 require.extensions['.css'] = function() {return null}
 require.extensions['.scss'] = function() {return null}
