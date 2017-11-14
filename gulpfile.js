@@ -19,6 +19,12 @@ gulp.task('deploy', function(callback) {
 
 });
 
+gulp.task('dev_deploy', function(callback) {
+
+  runSequence('build','commit','heroku-push', callback);
+
+});
+
 
 
 //# Dev backend server
@@ -101,6 +107,24 @@ gulp.task( 'gandi-push', function(callback) {
 gulp.task( 'gandi-deploy', function(callback) {
 
     var process  = exec('ssh XXXXXXX@git.dc0.gpaas.net deploy default.git', {maxBuffer: 1024 * 2000}, function (err, stdout, stderr) {
+
+        callback(err);
+    });
+
+    process.stdout.on('data', function(data) {
+        console.log(data);
+    });
+
+    process.stderr.on('data', function(data) {
+        console.log(data);
+    });
+
+});
+
+
+gulp.task( 'heroku-push', function(callback) {
+
+    var process = exec('git push heroku master', function (err, stdout, stderr) {
 
         callback(err);
     });
