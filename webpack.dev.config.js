@@ -44,7 +44,7 @@ module.exports = {
 
             {
                	test: /\.(js|jsx)?$/,
-			    exclude: /(node_modules|bower_components)/,
+			          exclude: /(node_modules|bower_components)/,
 
                 loader: 'react-hot!babel?presets[]=es2015&presets[]=stage-0&presets[]=react'
             },
@@ -63,7 +63,7 @@ module.exports = {
             },
 
 
-      		//# CSS
+      		  //# CSS
             { 
              	test: /\.css$/,
              	//loader: "style-loader!css-loader"
@@ -73,19 +73,19 @@ module.exports = {
             //# STYLUS
             { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
 
-      		
-      		//# LESS
-		    {
-		      test: /\.less$/,
-		      loader: 'style!css!less'
-		    },
+          		
+          		//# LESS
+    		    {
+    		      test: /\.less$/,
+    		      loader: 'style!css!less'
+    		    },
 
-		    //# SASS
-		    {
-		      test: /\.scss$/,
-		      loader: 'style!css!sass'
-		    },
-		    
+    		    //# SASS
+    		    {
+    		      test: /\.scss$/,
+    		      loader: 'style!css!sass'
+    		    },
+    		    
             //#EJS TEMPLATES
             //{ test: /\.ejs$/, loader: "ejs-loader?variable=data" }
             { test: /\.ejs$/, loader: "ejs-compiled" }

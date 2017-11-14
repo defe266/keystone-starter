@@ -9,7 +9,8 @@ var defaultLang = i18n.default
 
 var Upload = new keystone.List('Upload', {
 
-  defaultSort: '-createdAt'
+  defaultSort: '-createdAt',
+  searchFields: 'file.filename'
 })
 
 Upload.add({
@@ -25,7 +26,7 @@ Upload.add({
 //# change _id in schema
 Upload.schema.add({
 
-    _id: { type: String, index: true, unique: true }
+    _id: { type: String }//, index: true, unique: true
 });
 
 

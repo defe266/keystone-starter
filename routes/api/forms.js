@@ -19,8 +19,8 @@ module.exports.contact = function(req, res, next){
 				
 				to: recipients,
 				from: {
-					name: 'XXXXX',
-					email: 'web@xxxxxxxx.es',
+					name: 'WEB',
+					email: 'web@'+process.env,
 				},
 				subject: 'Nuevo contacto ['+locals.name+']',
 
