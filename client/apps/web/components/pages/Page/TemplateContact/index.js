@@ -19,7 +19,7 @@ var Page = React.createClass({
   propTypes: {
     
     id: React.PropTypes.string.isRequired,
-    data : React.PropTypes.object.isRequired,
+    values : React.PropTypes.object.isRequired,
     show : React.PropTypes.bool.isRequired,
     loading: React.PropTypes.bool.isRequired,
     errors: React.PropTypes.array.isRequired,
@@ -63,7 +63,7 @@ var Page = React.createClass({
     const props = this.props;
     const item = props.item;
     const query = props.query;
-    const values = props.data;
+    const values = props.values;
     const errors = props.errors;
 
 
