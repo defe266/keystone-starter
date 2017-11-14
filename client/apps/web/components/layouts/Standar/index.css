@@ -90,7 +90,8 @@
 
     flex: 8;
     -webkit-flex: 8;
-    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
     overflow-x: hidden;
     min-height: 0px;
     position: relative;
