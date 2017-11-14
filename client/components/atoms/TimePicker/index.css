@@ -1,0 +1,15 @@
+.form-control.TimePicker__hour, .form-control.TimePicker__minute{
+
+	width: 50%;
+	float: left;
+}
+
+.form-control.TimePicker__hour{
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.form-control.TimePicker__minute{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}

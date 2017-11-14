@@ -8,17 +8,16 @@ env(__dirname + '/.env');
 
 var entry = {};
 
-fs.readdirSync(path.resolve(__dirname, './apps')).forEach(function(fld) {
+fs.readdirSync(path.resolve(__dirname, './client/apps')).forEach(function(fld) {
 
-  if(fld.indexOf('.') == -1){//# fix for .DS_store
-
-    entry[fld] = [
-          'webpack-dev-server/client?http://localhost:'+process.env.PORT_DEV,
-          'webpack/hot/only-dev-server',
-          "babel-polyfill",
-          './apps/'+fld+'/client.js'
-      ]
-  }
+    if (fld.indexOf('.') == -1) { //# fix for .DS_store
+        entry[fld] = [
+            'webpack-dev-server/client?http://localhost:' + process.env.PORT_DEV,
+            'webpack/hot/only-dev-server',
+            "babel-polyfill",
+            './client/apps/' + fld + '/client.js'
+        ]
+    }
 
 });
 

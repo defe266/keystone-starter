@@ -7,15 +7,15 @@ var fs = require('fs');
 
 var entry = {};
 
-fs.readdirSync(path.resolve(__dirname, './apps')).forEach(function(fld) {
 
-  if(fld.indexOf('.') == -1){//# fix for .DS_store
+fs.readdirSync(path.resolve(__dirname, './client/apps')).forEach(function(fld) {
 
-    entry[fld] = [
-          "babel-polyfill",
-          './apps/'+fld+'/client.js'
-      ]
-  }
+    if (fld.indexOf('.') == -1) { //# fix for .DS_store
+
+        entry[fld] = [
+            "babel-polyfill", './client/apps/' + fld + '/client.js'
+        ]
+    }
 
 });
 
@@ -81,22 +81,24 @@ module.exports = {
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader",'stylus-loader')
             },
 
-      		
-    		//# LESS
-		    {
-		      test: /\.less$/,
-		      loader: 'style!css!less'
-		    },
+        		
+      		//# LESS
+  		    {
+  		      test: /\.less$/,
+  		      loader: 'style!css!less'
+  		    },
 
-		    //# SASS
-		    {
-		      test: /\.scss$/,
-		      loader: 'style!css!sass'
-		    },
-  		    
+  		    //# SASS
+          {
+              test: /\.scss$/,
+              //loader: 'style!css!sass'
+              //loader: ExtractTextPlugin.extract("style-loader", "css-loader", 'resolve-url-loader', 'sass-loader?sourceMap')
+              loader: ExtractTextPlugin.extract("style", "css!sass")
+          },
+    		    
 
             //#EJS TEMPLATES
-            { test: /\.ejs$/, loader: "ejs-compiled" }
+          { test: /\.ejs$/, loader: "ejs-compiled" }
         ]
     },
     plugins: [

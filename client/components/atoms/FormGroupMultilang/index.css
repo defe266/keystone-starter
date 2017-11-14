@@ -1,0 +1,17 @@
+.FormGroupMultilang .tab-content > .tab-pane{
+	padding: 15px;
+    border: 1px solid #ddd;
+    margin-top: -1px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.FormGroupMultilang .nav-tabs{
+	margin-left: 0px;
+	background-size: 100% 2px;
+}
+
+.FormGroupMultilang .nav-tabs > li > a{
+	font-size: 11px;
+	padding: 3px 5px;
+}
