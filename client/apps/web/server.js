@@ -94,9 +94,6 @@ module.exports = function(req, res, next) {
                                 <meta charset="UTF-8">
                                 <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">
 
-                                
-
-                                <title>Fuertecharter</title>
                               </head>
 
                               <body ${helmet.bodyAttributes.toString()}>
