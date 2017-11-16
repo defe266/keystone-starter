@@ -79,7 +79,7 @@
   "scripts": {
     "start": "node keystone.js",
     "unlink": "npm unlink keystone",
-    "extract": "i18n_extract --source=apps",
+    "extract": "i18n_extract --source=client",
     "import": "i18n_import --translations=."
   },
   "main": "keystone.js"

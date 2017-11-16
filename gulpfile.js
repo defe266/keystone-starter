@@ -138,3 +138,40 @@ gulp.task( 'heroku-push', function(callback) {
     });
 
 });
+
+
+gulp.task( 'i18n-export', function(callback) {
+
+
+    var process = exec('npm run extract', function (err, stdout, stderr) {
+
+        callback(err);
+    });
+
+    process.stdout.on('data', function(data) {
+        console.log(data);
+    });
+
+    process.stderr.on('data', function(data) {
+        console.log(data);
+    });
+
+});
+
+gulp.task( 'i18n-import', function(callback) {
+
+
+    var process = exec('npm run import', function (err, stdout, stderr) {
+
+        callback(err);
+    });
+
+    process.stdout.on('data', function(data) {
+        console.log(data);
+    });
+
+    process.stderr.on('data', function(data) {
+        console.log(data);
+    });
+
+});
