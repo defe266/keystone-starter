@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 //import { Link } from 'react-router'
 
 
-import get from '../../../actions/Pages/single_get';
+import initialLoad from '../../../actions/Pages/initialLoad';
 
 import Alert from 'react-bootstrap/lib/Alert';
 import Loader from '../../atoms/Loader';
 import BlockHTML from '../../atoms/BlockHTML'
 import Layout from '../../layouts/Standar';
+import Head from '../../organisms/Head';
 import Page404 from '../Page404';
 import TemplateStandar from './TemplateStandar';
 import TemplateContact from './TemplateContact';
@@ -40,10 +41,10 @@ var Page = React.createClass({
     if(!notReady){
 
       //# page in position home only acccesible in home route
-      if(props.homeID == item.id) return <Page404/>
+      if(props.homeID == item._id) return <Page404/>
 
       //# select page template component
-      switch(item.fields.template){
+      switch(item.template){
 
         case 'contact': var PAGE = <TemplateContact item={item} lang={lang}/>; break;
         case 'slider': var PAGE = <TemplateSlider item={item} lang={lang}/>; break;
@@ -56,6 +57,8 @@ var Page = React.createClass({
     return (
 
       <Layout className="Page">
+
+        <Head/>
         
         {notReady ? notReady : <div>{PAGE}</div>}
 
@@ -67,7 +70,7 @@ var Page = React.createClass({
 
 
 //# routing action (server an client side)
-Page.fetchData = get;
+Page.fetchData = initialLoad;
 
 
 //export default Page;

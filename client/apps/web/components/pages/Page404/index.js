@@ -3,9 +3,24 @@ import { connect } from 'react-redux'
 //import { Link } from 'react-router'
 
 import Layout from '../../layouts/Standar';
+import Head from '../../organisms/Head';
 
 
-var Hotels = React.createClass({
+var Page404 = React.createClass({
+
+  contextTypes: {
+    t: React.PropTypes.func.isRequired
+  },
+
+  componentWillMount: function(){
+
+    this.props.dispatch({type:'HEAD_UPDATE', data: {
+
+      title: this.context.t("Error 404"),
+      description: this.context.t("Parece que no podemos encontrar lo que estás buscando."),
+      noIndex: true
+    }})
+  },
 
   render: function () {
 
@@ -15,15 +30,17 @@ var Hotels = React.createClass({
 
       <Layout className="Page404">
 
+        <Head/>
+
         <div className="container">
 
           <div className="containerStandar">
 
             <div className="headerStandar">
-              <h1 className="titleStandar">Error 404</h1>
+              <h1 className="titleStandar">{this.context.t("Error 404")}</h1>
             </div>
 
-           Parece que no podemos encontrar lo que estás buscando.
+           {this.context.t("Parece que no podemos encontrar lo que estás buscando.")}
 
           </div>
 
@@ -36,4 +53,4 @@ var Hotels = React.createClass({
 });
 
 
-export default Hotels;
+export default connect()(Page404)

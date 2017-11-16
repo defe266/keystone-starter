@@ -76,13 +76,13 @@ var Page = React.createClass({
             <div className="containerStandar">
 
               <div className="headerStandar">
-                <h1 className="titleStandar"><TextI18n value={item.fields.title}/></h1>
+                <h1 className="titleStandar"><TextI18n value={item.title}/></h1>
               </div>
 
               <Row>
                 <Col sm={6}>
 
-                  <TextI18n value={item.fields.content} html/>
+                  <TextI18n value={item.content} html/>
                   
                 </Col>
 
@@ -138,9 +138,9 @@ var Page = React.createClass({
 
           </div>
 
-          { item.fields.haveMap && item.fields.coordinates && item.fields.coordinates.length == 2 ? 
+          { item.haveMap && item.coordinates && item.coordinates.length == 2 ? 
 
-            <MarkerMap coords={[item.fields.coordinates[1], item.fields.coordinates[0]]} zoom={16}/>
+            <MarkerMap coords={[item.coordinates[1], item.coordinates[0]]} zoom={16}/>
 
           :null}
 

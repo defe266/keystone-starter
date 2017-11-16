@@ -26,11 +26,11 @@ var Page = React.createClass({
             <div className="containerStandar">
 
               <div className="headerStandar">
-                <h1 className="titleStandar"><TextI18n value={item.fields.title}/></h1>
+                <h1 className="titleStandar"><TextI18n value={item.title}/></h1>
               </div>
 
               
-              <TextI18n value={item.fields.content} html/>
+              <TextI18n value={item.content} html/>
 
             </div>
 

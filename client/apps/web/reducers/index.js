@@ -3,6 +3,7 @@ import positions from './positions'
 import layout from './layout'
 import page from './page'
 import menus from './menus'
+import head from './head'
 import forms from './forms'
 
 import { routerReducer as routing } from 'react-router-redux'
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   ready,
   positions,
   menus,
+  head,
   layout,
   page,
   forms,

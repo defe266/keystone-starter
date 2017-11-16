@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import metaUpdateBySingle from '../../../actions/App/metaUpdateBySingle';
 
+import Head from '../../organisms/Head';
 import Layout from '../../layouts/Standar';
 import Slider from '../../molecules/Slider';
 import Icon from '../../atoms/Icon';
@@ -49,7 +51,8 @@ var Home = React.createClass({
 
       <Layout className="Home">
         
-        
+        <Head/>
+
         <Slider className="SliderCover" items={images} fixedHeight indicators={false} prevIcon={<Icon name="angle-double-left"/>} nextIcon={<Icon name="angle-double-right"/>}/>
 
 
@@ -58,18 +61,23 @@ var Home = React.createClass({
   }
 
 });
-/*
-//# routing action (server an client side)
-Home.fetchData = (location, params, req) => {
+
+
+
+//# cargo mi seo en server
+Home.fetchData = (location, params, req) => { 
 
   return (dispatch, getState) => {
 
-    return Promise.all([
-      dispatch(featuredHotels_get()),
-      dispatch(featuredProductCategories_get())
-    ])
+     var homeResource = {
+
+      item : getState().positions.data.home
+    }
+
+    return dispatch( metaUpdateBySingle(homeResource) )
   }
-}*/
+}
+
 
 
 
