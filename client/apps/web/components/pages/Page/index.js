@@ -11,10 +11,21 @@ import BlockHTML from '../../atoms/BlockHTML'
 import Layout from '../../layouts/Standar';
 import Head from '../../organisms/Head';
 import Page404 from '../Page404';
-import TemplateStandar from './TemplateStandar';
-import TemplateContact from './TemplateContact';
-import TemplateSlider from './TemplateSlider';
+import TemplateStandar from './templates/Standar';
+import TemplateContact from './templates/Contact';
+import TemplateSlider from './templates/Slider';
 
+
+function getComponentByTemplate(template){
+
+  switch(template){
+
+    case 'contact': return TemplateContact
+    case 'slider': return TemplateSlider
+
+    default:  return TemplateStandar
+  }
+}
 
 
 var Page = React.createClass({
@@ -43,26 +54,16 @@ var Page = React.createClass({
       //# page in position home only acccesible in home route
       if(props.homeID == item._id) return <Page404/>
 
-      //# select page template component
-      switch(item.template){
+      
+      //# si la pagina está cargada, devolvemos
+      var Component = getComponentByTemplate(item.template);
 
-        case 'contact': var PAGE = <TemplateContact item={item} lang={lang}/>; break;
-        case 'slider': var PAGE = <TemplateSlider item={item} lang={lang}/>; break;
-
-        default:  var PAGE = <TemplateStandar item={item} lang={lang}/>
-      }  
+      return <Component {...props}/>
     }
-
 
     return (
 
-      <Layout className="Page">
-
-        <Head/>
-        
-        {notReady ? notReady : <div>{PAGE}</div>}
-
-      </Layout>
+      <Layout className="Page">{notReady}</Layout>
     )
   }
 
@@ -70,7 +71,26 @@ var Page = React.createClass({
 
 
 //# routing action (server an client side)
-Page.fetchData = initialLoad;
+Page.fetchData = (location, params, req) => { 
+
+  return (dispatch, getState) => {
+
+    return dispatch( initialLoad(location, params, req) ).then(() => {
+
+      var template = getState().page.item.template
+
+      //# si la plantilla tiene opciones de carga desde server, las encadenamos
+      var Component = getComponentByTemplate(template);
+
+      if(Component.fetchData){
+
+        return dispatch( fetchData(location, params, req) )
+      }
+
+    })
+  }
+}
+
 
 
 //export default Page;
