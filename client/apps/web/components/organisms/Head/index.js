@@ -22,7 +22,7 @@ var Head = React.createClass({
     const langSelected = props.lang;
     var location = props.location;
 
-    var pathname = location.pathname + location.search;
+    var pathname = location.pathname;// + location.search;
 
     if(langSelected == I18N.default){
 
@@ -43,19 +43,23 @@ var Head = React.createClass({
     return (
 
 
-    	<Helmet>
+      <Helmet>
 
-    		<html lang={props.lang}/>
+        <html lang={props.lang}/>
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
 
             {props.noIndex || process.env.NODE_ENV == 'development' ? <meta name="robots" content="noindex"/> : null}
 
+
+            <link rel="canonical" href={sd.SERVER_URL + pathname} />
+
+
             {I18N.langs.map((lang, index) => {
 
               if(lang == langSelected) return null
 
-              return <link rel="alternate" hreflang={lang} href={i18nURL(defaultPathname, lang)} />
+              return <link rel="alternate" hreflang={lang} href={sd.SERVER_URL + i18nURL(defaultPathname, lang)} />
 
             })}
 
