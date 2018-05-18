@@ -28,6 +28,9 @@ Page.add(
 		//test: { label: "test", type: Types.Html, wysiwyg: true},//wysiwyg: true,
 		content: { label: "Contenido", type: Types.I18nHtml,wysiwyg: true,  langs: langs, defaultLang: defaultLang},//wysiwyg: true,
 
+
+		content_v2: { label: "Contenido", type: Types.Html_v2, wysiwyg: true,  langs: langs, defaultLang: defaultLang},//wysiwyg: true,
+
 		
 
 

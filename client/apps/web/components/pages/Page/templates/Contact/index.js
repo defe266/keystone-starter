@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import submit from '../../../../../actions/Forms/contact_submit'
 
+import Head from '../../../../organisms/Head';
 import Layout from '../../../../layouts/Standar';
 import TextI18n from '../../../../atoms/TextI18n'
 import Row from '../../../../atoms/Row'
@@ -21,7 +22,7 @@ var Page = React.createClass({
     id: React.PropTypes.string.isRequired,
     values : React.PropTypes.object.isRequired,
     show : React.PropTypes.bool.isRequired,
-    loading: React.PropTypes.bool.isRequired,
+    sending: React.PropTypes.bool.isRequired,
     errors: React.PropTypes.array.isRequired,
   },
 
@@ -66,11 +67,13 @@ var Page = React.createClass({
     const values = props.values;
     const errors = props.errors;
 
-
+console.log('props.loading',props.sending)
     return (
 
 
       <Layout className="Page">
+
+        <Head/>
 
         <div className="TemplateContact">
 
@@ -121,7 +124,7 @@ var Page = React.createClass({
                               <textarea type="text" className="form-control" rows="8" value={values.message} onChange={(e) => this.update({message : e.target.value})}/>
                             </FormGroup>
 
-                            <ButtonLoader loading={props.loading} className="btn btn-primary" onClick={this.submit}>{this.context.t("Enviar")}</ButtonLoader>
+                            <ButtonLoader loading={props.sending} className="btn btn-primary btn-lg" onClick={this.submit}>{this.context.t("Enviar")}</ButtonLoader>
                             
                           </Col>
 

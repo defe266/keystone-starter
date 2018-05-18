@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import {Helmet} from "react-helmet";
-import i18nURL from '../../../lib/i18nURL';
+import i18nURL from 'client/lib/i18nURL';
 var sd = require('sharify').data;
 var I18N = sd.I18N;
 

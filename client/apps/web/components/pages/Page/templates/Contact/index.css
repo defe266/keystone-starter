@@ -1,3 +1,7 @@
+.TemplateContact .form-group__label{
+	display: block;
+}
+
 @media (max-width: 767px) {
 
 	.TemplateContact__form{

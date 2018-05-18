@@ -1,4 +1,4 @@
-var Growl = require('../../lib/growl');
+var Growl = require('client/lib/growl');
 var validators = require('../../lib/validators');
 var axios = require('axios');
 var sd = require('sharify').data;
@@ -33,7 +33,7 @@ export default function (context){
 
 		//# si pasamos validación, enviamos datos
 
-		dispatch({type: 'FORM_'+id+'_LOADING_START'})
+		dispatch({type: 'FORM_'+id+'_SEND_START'})
 
 		return axios({
 
@@ -43,7 +43,7 @@ export default function (context){
 
 		}).then((res) => {
 
-			//dispatch({type: 'FORM_'+id+'_LOADING_END'});
+			//dispatch({type: 'FORM_'+id+'_SEND_END'});
 			dispatch({type: 'FORM_'+id+'_RESET'});
 
 			Growl(context.t('Mensaje enviado'), 'success');
@@ -51,7 +51,7 @@ export default function (context){
 
 		}, (err) => {
 
-			dispatch({type: 'FORM_'+id+'_LOADING_END'});
+			dispatch({type: 'FORM_'+id+'_SEND_END'});
 
 			var res = Object.getOwnPropertyDescriptor(err, 'response');
 	        res = res ? res.value : res;
