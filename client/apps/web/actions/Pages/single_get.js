@@ -15,7 +15,8 @@ export default function (location, params){
 			url : sd.SERVER_URL+'/api/pages/'+params.slug,//'http://127.0.0.1:5001/api/hotels'
 			params: {
 
-				getBy : 'key'
+				getBy : 'key',
+				populate: 'slider'
 			}
 
 		}).then((res) => {

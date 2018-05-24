@@ -17,11 +17,62 @@ Upload.add({
 
   file: { label: "Archivo", type: Types.FileUpload, storage: myStorage, initial: true, noedit: true},
   createdAt: { label: "Creado el", type: Date, default: Date.now },
-  title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang},
-  content: { label: "Contenido", type: Types.I18nHtml,  langs: langs, defaultLang: defaultLang, wysiwyg: true},
-  link: { label: "Enlace", type: Types.I18nText, langs: langs, defaultLang: defaultLang},
+  //title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang},
+  //content: { label: "Contenido", type: Types.I18nHtml,  langs: langs, defaultLang: defaultLang, wysiwyg: true},
+  //link: { label: "Enlace", type: Types.I18nText, langs: langs, defaultLang: defaultLang},
   
-});
+  },
+
+  { 
+    heading: "Contenido (se usa en sliders)"
+  }, 
+
+  {
+    title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang},
+    content: { label: "Descripción", type: Types.I18nHtml,  langs: langs, defaultLang: defaultLang, wysiwyg: true},
+
+    multiLink: { label: "Enlace multiple", type: Types.Boolean, default: false},
+
+    link: { label: "Enlace", type: Types.I18nText, langs: langs, defaultLang: defaultLang, dependsOn: { multiLink: false }},
+
+    links: {
+
+      label:'Botones',
+      type: Types.List, 
+      fields: {
+
+        //icon: { label: "Icono", type: Types.Text, note: "Nombre de icono 'font awesome' sin prefijo. https://fontawesome.com/v4.7.0/icons/"},
+        //title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang},
+
+        text: { label: "Texto", type: Types.I18nText, note: "Añade iconos usando su nombre entre corchetes sin el prefijo 'fa-' <br/> ej: ver vídeo [arrow-right]  <br/> https://fontawesome.com/v4.7.0/icons/", langs: langs, defaultLang: defaultLang},
+
+        //className: { label: "CSS Classes", type: Types.Text, note: "ej botón estandar de 'bootstrap': btn btn-primary"},
+
+        classNameBtn: { label: "Tipo", type: Types.Select, default: 'btn', options: [
+          { label: 'Estándar', value: 'btn' },
+          { label: 'Transparente', value: 'btn btn-hollow-style' },
+          { label: 'Play de vídeo', value: 'btn btn-video-play' }
+        ]},
+
+        classNameBtnStyle: { label: "Color", type: Types.Select, default: 'btn-primary', options: [
+          { label: 'Azul', value: 'btn-primary' },
+          { label: 'Amarillo', value: 'btn-warning' },
+          { label: 'Rojo', value: 'btn-danger' },
+          { label: 'blanco', value: 'btn-white' },
+          
+        ]},
+
+        //className: { label: "CSS Classes", type: Types.Text, note: "ej botón estandar de 'bootstrap': btn btn-primary"},
+        link: { label: "Enlace", type: Types.I18nText, langs: langs, note:"Usa el código de youtube con 'youtube:' para mostrarlo en un modal. <br/> ej: youtube:wZZ7oFKsKzY", defaultLang: defaultLang},
+
+        
+      },
+
+      dependsOn: { multiLink: true }
+    }
+  }
+
+);
 
 //# change _id in schema
 Upload.schema.add({

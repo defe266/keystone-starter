@@ -33,8 +33,6 @@ keystone.init({
 
 	'name': 'KeystoneJS',
 	'brand': 'KeystoneJS',
-	'wysiwyg images': true,
-	//'wysiwyg cloudinary images': true,
 
 	'less': 'public',
 	
@@ -49,7 +47,43 @@ keystone.init({
 	'session': true,
 	'session store': 'mongo',
 	'auth': true,
-	'user model': 'User'
+	'user model': 'User',
+
+
+	'wysiwyg images': true,
+
+	'wysiwyg additional options': {
+		relative_urls: false,
+
+		skin : 'lightgray',
+        //menubar : 'file edit format view insert',
+        //content_css: '/vendor/tinyvision/build/tinyvision.css',
+        visualblocks_default_state: true,
+        
+        external_plugins: {
+            'tinyvision':'/vendor/tinyvision/build/plugin.min.js'
+        },
+        tinyvision: {
+            source: '/api/tinyvision/images'
+        }
+	},
+	//'wysiwyg cloudinary images': true,
+	//'wysiwyg override toolbar': false,
+	//'wysiwyg menubar': true,
+	//'wysiwyg skin': 'lightgray',
+	//'wysiwyg additional buttons': 'searchreplace visualchars'
+	/* + ' charmap ltr rtl pagebreak paste, forecolor backcolor,'
+	 +' emoticons media, preview print ',
+	'wysiwyg additional plugins': 'example, table, advlist, anchor,'
+	 + ' autolink, autosave, bbcode, charmap, contextmenu, '
+	 + ' directionality, emoticons, fullpage, hr, media, pagebreak,'
+	 + ' paste, preview, print, searchreplace, textcolor,'
+	 + ' visualblocks, visualchars, wordcount',*/
+
+	//'wysiwyg additional buttons': 'searchreplace, visualchars, charmap, ltr, rtl, pagebreak, paste, forecolor, backcolor, emoticons, media, preview, print',
+	//'wysiwyg additional plugins': 'example, table, advlist, anchor autolink, autosave, bbcode, charmap, contextmenu, directionality, emoticons, fullpage, hr, media, pagebreak, paste, preview, print, searchreplace, textcolor, visualblocks, visualchars, wordcount',
+
+	//'wysiwyg additional plugins': 'tinyvision',
 	
 });
 
@@ -63,10 +97,10 @@ keystone.import('models');
 // variable was added to your Heroku config for you if you used the "Deploy to
 // Heroku" button. The secret below will be used for development.
 // You may want to set it to something private and secure.
-
+/*
 if (!keystone.get('cookie secret')) {
 	keystone.set('cookie secret', '----change-me-to-something-secret----');
-}
+}*/
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely

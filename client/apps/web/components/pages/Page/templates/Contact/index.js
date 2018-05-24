@@ -5,11 +5,11 @@ import submit from '../../../../../actions/Forms/contact_submit'
 
 import Head from '../../../../organisms/Head';
 import Layout from '../../../../layouts/Standar';
-import TextI18n from '../../../../atoms/TextI18n'
-import Row from '../../../../atoms/Row'
-import Col from '../../../../atoms/Col'
-import FormGroup from '../../../../atoms/FormGroup'
-import ButtonLoader from '../../../../atoms/ButtonLoader'
+import TextI18n from 'client/components/atoms/TextI18n';
+import Row from 'client/components/atoms/Row'
+import Col from 'client/components/atoms/Col'
+import FormGroup from 'client/components/atoms/FormGroup'
+import ButtonLoader from 'client/components/atoms/ButtonLoader'
 import MarkerMap from '../../../../molecules/MarkerMap';
 
 import './index.css';

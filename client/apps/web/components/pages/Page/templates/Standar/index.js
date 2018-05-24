@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../../../../layouts/Standar';
-import TextI18n from '../../../../atoms/TextI18n'
+import TextI18n from 'client/components/atoms/TextI18n';
 
 
 var Page = React.createClass({

@@ -1,0 +1,27 @@
+.LangSelector{
+	display: inline-block;
+}
+
+.LangSelector__item{
+	display: block;
+	padding: 4px 10px;
+}
+
+.LangSelector .dropdown-menu{
+	min-width: 110px;
+}
+
+
+.Header__LangSelector ul{
+  margin: 0;
+}
+
+.LangSelector__flag{
+	width: 20px;
+	height: auto;
+	margin-right: 8px;
+}
+
+.LangSelector.Header__LangSelector button{
+	color: white;
+}

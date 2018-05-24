@@ -1,6 +1,6 @@
 module.exports.i18n = {
 
-	langs: ['es'],
-	langsNames: ['Español'],
+	langs: ['es','en'],
+	langsNames: ['Español', 'English'],
 	default: 'es'
 }

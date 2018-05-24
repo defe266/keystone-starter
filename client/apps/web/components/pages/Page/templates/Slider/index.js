@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Layout from '../../../../layouts/Standar';
-import TextI18n from '../../../../atoms/TextI18n'
-import Icon from '../../../../atoms/Icon'
-import Slider from '../../../../molecules/Slider'
+import TextI18n from 'client/components/atoms/TextI18n';
+import Icon from 'client/components/atoms/Icon';
+import Slider from 'client/components/molecules/Slider'
 
 
 
@@ -20,21 +20,6 @@ var Page = React.createClass({
     const item = props.item;
     const lang = props.lang;
 
-    var images = item.slider.map((item) => {
-
-      return {
-
-          //title: item.title ? item.title.es : '',
-          sizes: {full: { url: '/uploads/'+item+'/:/'}},//._id
-          content: item.content ? item.content[lang] : '',//"ven a disfrutarlas con la familia o amigos",
-          meta: {
-            link: [item.link ? item.link[lang] : '']
-          }
-        }
-    })
-
-    
-
 
     // className="SliderCover"
 
@@ -43,7 +28,7 @@ var Page = React.createClass({
       <Layout className="Page">
         <div className="TemplateStandar">
 
-            <Slider className="SliderCover" items={images} fixedHeight indicators={false} prevIcon={<Icon name="angle-double-left"/>} nextIcon={<Icon name="angle-double-right"/>}/>
+            <Slider className="SliderCover" items={item.slider} fixedHeight indicators={false} prevIcon={<Icon name="angle-double-left"/>} nextIcon={<Icon name="angle-double-right"/>}/>
 
             <div className="container">
 

@@ -1,0 +1,32 @@
+.YoutubeModal__Modal .modal-dialog{
+	height: 100%;
+    background: #000;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.YoutubeModal__Modal .modal-body{
+	padding: 0;
+}
+
+.YoutubeModal__Modal .modal-body button{
+	position: fixed;
+    color: #fff;
+    font-size: 30px;
+    opacity: 1;
+    right: 20px;
+    top: 10px;
+    z-index: 232344;
+}
+
+.YoutubeModal__Modal iframe{
+	height: calc(100% - 40px) !important;
+    bottom: 0px;
+    left: 0;
+    position: fixed;
+    z-index: 3;
+    border:none;
+}

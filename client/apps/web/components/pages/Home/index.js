@@ -5,8 +5,9 @@ import metaUpdateBySingle from '../../../actions/App/metaUpdateBySingle';
 
 import Head from '../../organisms/Head';
 import Layout from '../../layouts/Standar';
-import Slider from '../../molecules/Slider';
-import Icon from '../../atoms/Icon';
+import Icon from 'client/components/atoms/Icon';
+import BlockHTML from 'client/components/atoms/BlockHTML';
+import Slider from 'client/components/molecules/Slider';
 
 
 
@@ -27,25 +28,10 @@ var Home = React.createClass({
 
     const props = this.props;
     const page = props.page;
+    const lang = props.lang;
 
     if(!props.loading && !page) return <h1>¡Configura una página de inicio!</h1>
 
-
-    var images = page.slider.map((item) => {
-
-      return {
-
-          title: item.title ? item.title.es : '',
-          sizes: {full: { url: '/uploads/'+item._id+'/:/'}},
-          content: item.content ? item.content.es : '',//"ven a disfrutarlas con la familia o amigos",
-          meta: {
-            link: [item.link ? item.link.es : '']
-          }
-        }
-    })
-
-//debugger;
-    
 
     return (
 
@@ -53,7 +39,10 @@ var Home = React.createClass({
         
         <Head/>
 
-        <Slider className="SliderCover" items={images} fixedHeight indicators={false} prevIcon={<Icon name="angle-double-left"/>} nextIcon={<Icon name="angle-double-right"/>}/>
+        <Slider className="SliderCover" items={page.slider} fixedHeight indicators={false} prevIcon={<Icon name="angle-double-left"/>} nextIcon={<Icon name="angle-double-right"/>}/>
+
+
+        <BlockHTML>{page.content[lang]}</BlockHTML>
 
 
       </Layout>
@@ -88,6 +77,7 @@ export default connect((state, ownProps) => {
   return {
     loading: state.positions.loading,
     page : state.positions.data.home,
+    lang : state.i18nState.lang,
     //resources: state.home
   }
 

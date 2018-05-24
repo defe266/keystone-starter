@@ -40,7 +40,8 @@
     "redux-thunk": "^2.1.0",
     "sharify": "0.1.6",
     "ip":"1.1.4",
-    "rootpath": "0.1.*"
+    "rootpath": "0.1.*",
+    "react-process-string" : "1.2.0"
     
   },
   "devDependencies": {

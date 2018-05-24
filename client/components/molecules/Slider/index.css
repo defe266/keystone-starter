@@ -1,0 +1,10 @@
+.Slider__divimg{
+	background-position: center;
+	min-height: 400px;
+}
+
+.Slider__caption__buttons > a,
+.Slider__caption__buttons > button,
+.Slider__caption__buttons > div{
+	margin-right: 10px;
+}

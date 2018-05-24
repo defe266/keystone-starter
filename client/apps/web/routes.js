@@ -1,10 +1,13 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
+var sd = require('sharify').data;
+var I18N = sd.I18N;
 
 //import Counter from './components/Counter.js'
 import App from './components/index';//./containers/
 import Home from './components/pages/Home';
 import Page from './components/pages/Page';
+import PageTest from './components/pages/PageTest';
 import Page404 from './components/pages/Page404';
 
 
@@ -32,15 +35,18 @@ function createI18nRoutes(base, component){
 }
 
 /*
-	{createI18nIndexRoutes(Home)}
-	{createI18nRoutes(":slug", Page)}
-	{createI18nRoutes("*", Page404)}
+	
+  	<IndexRoute component={Home}/>
+	<Route path="/:slug" component={Page} />
+	<Route path="*" component={Page404} />
 */
 
 export default <Route path="/" component={App}>
   
-  	<IndexRoute component={Home}/>
-	<Route path="/:slug" component={Page} />
-	<Route path="*" component={Page404} />
+
+	{createI18nIndexRoutes(Home)}
+	{createI18nRoutes("page/:slug", PageTest)}
+	{createI18nRoutes(":slug", Page)}
+	{createI18nRoutes("*", Page404)}
 
 </Route>

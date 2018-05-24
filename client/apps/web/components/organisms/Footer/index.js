@@ -2,9 +2,9 @@ import React from 'react'//, { PropTypes }
 import { connect } from 'react-redux'
 
 import { Link, IndexLink } from 'react-router'
-import Icon from '../../atoms/Icon';
-import Row from '../../atoms/Row';
-import Col from '../../atoms/Col';
+import Icon from 'client/components/atoms/Icon';
+import Row from 'client/components/atoms/Row';
+import Col from 'client/components/atoms/Col';
 import Firma from './Firma';
 
 import './index.css'
@@ -43,11 +43,11 @@ var Footer = React.createClass({
 								</div>
 
 								<div className="Footer__widget">
-									<h3 className="Footer__widget__title">Alojamientos en Val Thorens</h3>
+									<h3 className="Footer__widget__title">XXXXX</h3>
 									<ul>
-										<li><Link to="/">Hoteles</Link></li>
-										<li><Link to="/">Apartamentos</Link></li>
-										<li><Link to="/">Chalets</Link></li>
+										<li><Link to="/">XXX</Link></li>
+										<li><Link to="/">XX</Link></li>
+										<li><Link to="/">XXX</Link></li>
 									</ul>
 								</div>
 
@@ -55,7 +55,7 @@ var Footer = React.createClass({
 							<Col md={3}>
 
 								<div className="Footer__widget">
-									<h3 className="Footer__widget__title">Valthorens.es</h3>
+									<h3 className="Footer__widget__title">XXXX</h3>
 									{!menus.loading && !menus.error ? 
 
 										<ul>

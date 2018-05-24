@@ -62,6 +62,9 @@ exports = module.exports = function(app) {
 
 	app.post('/api/form/contact', routes.api.forms.contact);
 
+
+	app.get('/api/tinyvision/images', routes.api.upload.tinyvisionList);
+
 	//# APPS 
 	app.get('/*', routes.apps.web);
 

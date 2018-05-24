@@ -1,8 +1,9 @@
 import React from 'react'//, { PropTypes } 
 import { Link, IndexLink } from 'react-router'
 
-import Icon from '../../atoms/Icon';
+import Icon from 'client/components/atoms/Icon';
 import Menu from '../../molecules/Menu';
+import LangSelector from '../../molecules/LangSelector';
 
 //import './img/logo.svg'
 
@@ -47,6 +48,8 @@ var Header = React.createClass({
 
 			        <div onClick={props.onShowRight} className="Header__toggle Header__toggle_right"><Icon name="bars"/></div>
 
+			        <LangSelector className="Header__LangSelector" shortName noIcon pullRight/>
+			        
 			        <Menu className="Header__menu"/>
 				    
 

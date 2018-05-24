@@ -7,7 +7,7 @@ import initialLoad from '../../../actions/Pages/initialLoad';
 
 import Alert from 'react-bootstrap/lib/Alert';
 import Loader from '../../atoms/Loader';
-import BlockHTML from '../../atoms/BlockHTML'
+import BlockHTML from 'client/components/atoms/BlockHTML';
 import Layout from '../../layouts/Standar';
 import Head from '../../organisms/Head';
 import Page404 from '../Page404';
