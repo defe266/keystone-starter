@@ -45,6 +45,7 @@ exports = module.exports = function(app) {
 
 	//# 301 redirect: www.* --> *
 	app.all('*',routes.helpers.removeWWW);
+	app.get('/api/tinyvision/images', routes.api.upload.tinyvisionList);
 
 
 	//# Supports imgs transformations
@@ -63,7 +64,7 @@ exports = module.exports = function(app) {
 	app.post('/api/form/contact', routes.api.forms.contact);
 
 
-	app.get('/api/tinyvision/images', routes.api.upload.tinyvisionList);
+
 
 	//# APPS 
 	app.get('/*', routes.apps.web);
