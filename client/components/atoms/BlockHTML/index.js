@@ -32,7 +32,7 @@ var BlockHTML = React.createClass({
         	var name = $(this).data('name');
         	var props = $(this).data('props');
 
-            console.log(name,props)
+            //console.log(name,props)
 
         	switch(name){
 
@@ -96,7 +96,10 @@ var BlockHTML = React.createClass({
 
         ///\](.*?)\[/g
 
-        var rePattern = new RegExp(/\[([\w-_]+)([^\]]*)?\](?:(.+?)?\[\/\1\])?/gi);
+
+        //var rePattern = new RegExp(/\[([\w-_]+)([^\]]*)?\](?:(.+?)?\[\/\1\])?/gi);
+
+        var rePattern = new RegExp(/\[\[([\w-_]+)([^\]\]]*)?\]\](?:(.+?)?\[\[\/\1\]\])?/gi);
 
         return html.replace(rePattern, function(match, nameText, argsText){
 
@@ -104,7 +107,7 @@ var BlockHTML = React.createClass({
 
             //console.log('match?', match, nameText, argsText);
 
-            var children = match.match(/\](.*?)\[/)
+            var children = match.match(/\]\](.*?)\[\[/)
 
             props.children = children ? children[1] : null 
 
@@ -116,7 +119,7 @@ var BlockHTML = React.createClass({
 
                 var args = argsText.match(/(\w+)\s*=\s*"([^"]*)"(?:\s|$)|(\w+)\s*=\s*\'([^\']*)\'(?:\s|$)|(\w+)\s*=\s*([^\s\'"]+)(?:\s|$)|"([^"]*)"(?:\s|$)|(\S+)(?:\s|$)/gi)
 
-                args = args.map((i) => i.replace(new RegExp('&nbsp', 'g'),'').replace(/\"/g,''))
+                args = args.map((i) => i.replace(new RegExp('&nbsp;', 'g'),'').replace(/\"/g,''))
 
                 args.forEach((item) => {
 
