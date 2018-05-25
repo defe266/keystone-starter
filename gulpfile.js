@@ -32,7 +32,7 @@ gulp.task('nodemon', function () {
 
 		nodemon({
 		    script: 'keystone.js',
-		    ignore: ["public/*","cache/*","node_modules/*","apps/*"],
+		    ignore: ["public/*","cache/*","node_modules/*","client/*"],
 		})
 
 });

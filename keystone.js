@@ -59,7 +59,8 @@ keystone.init({
         //menubar : 'file edit format view insert',
         //content_css: '/vendor/tinyvision/build/tinyvision.css',
         visualblocks_default_state: true,
-        
+        //extended_valid_elements: 'reactComp',
+        //valid_elements: 'reactComp',
         external_plugins: {
             'tinyvision':'/vendor/tinyvision/build/plugin.min.js'
         },
