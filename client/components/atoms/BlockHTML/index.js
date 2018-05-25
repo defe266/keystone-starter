@@ -131,7 +131,7 @@ var BlockHTML = React.createClass({
 
             var reactComponent = '<span class="_ReactComponentSpan" data-name="'+nameText+'" data-props=\''+JSON.stringify(props)+'\'></span>';//BINGO</reactComponent>
 
-            console.log(reactComponent)
+            //console.log(reactComponent)
 
             return reactComponent
         });
