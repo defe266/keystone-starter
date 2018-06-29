@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import i18nURL from 'client/lib/i18nURL';
 
 import submit from '../../../../../actions/Forms/contact_submit'
 
+import {Checkbox} from 'react-bootstrap'
 import Head from '../../../../organisms/Head';
 import Layout from '../../../../layouts/Standar';
 import TextI18n from 'client/components/atoms/TextI18n';
@@ -124,6 +126,18 @@ console.log('props.loading',props.sending)
                               <textarea type="text" className="form-control" rows="8" value={values.message} onChange={(e) => this.update({message : e.target.value})}/>
                             </FormGroup>
 
+                            {props.LOPD ? 
+
+                              <FormGroup errors={errors.polPrivacy}>
+
+                                <Checkbox checked={values.polPrivacy} onChange={(e) => this.update({polPrivacy : e.target.checked})}>
+                                  Acepto la <a href={i18nURL("/"+props.LOPD.key, props.lang)} target="_blank">Política de Privacidad</a>
+                                </Checkbox>
+
+                              </FormGroup>
+
+                            :null}
+
                             <ButtonLoader loading={props.sending} className="btn btn-primary btn-lg" onClick={this.submit}>{this.context.t("Enviar")}</ButtonLoader>
                             
                           </Col>
@@ -166,8 +180,9 @@ export default connect((state, ownProps) => {
 
   return Object.assign({}, state.forms.CONTACT, {
 
-    query : state.routing.locationBeforeTransitions ? state.routing.locationBeforeTransitions.query : {}
-
+    query : state.routing.locationBeforeTransitions ? state.routing.locationBeforeTransitions.query : {},
+    LOPD: state.positions.data.LOPD,
+    lang: state.i18nState.lang
   })
 
 })(Page)

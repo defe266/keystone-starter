@@ -10,6 +10,7 @@ const forms = combineReducers({
       email: '',
       subject: '',
       message: '',
+      polPrivacy: false,
     }
   }),
 

@@ -20,6 +20,7 @@ export default function (context){
 		if(!validators.isEmail(data.email)) errors.email = [context.t('Email inválido')];
 		if(data.name == '') errors.name = [context.t('Requerido')];
 		if(data.email == '') errors.email = [context.t('Requerido')];
+		if(!data.polPrivacy) errors.polPrivacy = [context.t('Requerido')];
 
 
 

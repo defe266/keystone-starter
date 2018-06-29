@@ -19,7 +19,7 @@ Page.add(
 			{ label: 'Borrador', value: 'draft' }
 		]},
 		title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang, required: true, initial: true },
-		position: { label: "Posición especial", type: Types.Select, options: 'none, home, cookies', default: "none"},
+		position: { label: "Posición especial", type: Types.Select, options: 'none, home, cookies, LOPD', default: "none"},
 		createdAt: { label: "Creado el", type: Date, default: Date.now },
 		//state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 		//publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
