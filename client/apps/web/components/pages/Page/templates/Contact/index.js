@@ -131,7 +131,7 @@ console.log('props.loading',props.sending)
                               <FormGroup errors={errors.polPrivacy}>
 
                                 <Checkbox checked={values.polPrivacy} onChange={(e) => this.update({polPrivacy : e.target.checked})}>
-                                  Acepto la <a href={i18nURL("/"+props.LOPD.key, props.lang)} target="_blank">Política de Privacidad</a>
+                                  {this.context.t('Acepto')} <a href={i18nURL("/"+props.LOPD.key, props.lang)} target="_blank">{this.context.t('Política de Privacidad')}</a>
                                 </Checkbox>
 
                               </FormGroup>
