@@ -70,7 +70,7 @@ var BannerCookies = React.createClass({
 
 					{this.context.t('Este sitio usa cookies para mejorar su rendimiento. Si continúa navegando consideramos que acepta la política de cookies.')}
 
-					&nbsp; <Link to={props.url}>{this.context.t('Learn more')}</Link>
+					&nbsp; <Link to={props.url}>{this.context.t('Leer más')}</Link>
 
 					&nbsp; &nbsp; <span className="BannerCookies__button" onClick={this.acceptCookies}><i className="fa fa-times"/></span>
 
