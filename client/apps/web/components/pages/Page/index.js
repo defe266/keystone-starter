@@ -71,11 +71,11 @@ var Page = React.createClass({
 
 
 //# routing action (server an client side)
-Page.fetchData = (location, params, req) => { 
+Page.fetchData = (location, params, routeLang, req) => { 
 
   return (dispatch, getState) => {
 
-    return dispatch( initialLoad(location, params, req) ).then(() => {
+    return dispatch( initialLoad(location, params, routeLang, req) ).then(() => {
 
       var template = getState().page.item.template
 

@@ -3,12 +3,13 @@ var Types = keystone.Field.Types;
 var i18n = require('../config.js').i18n
 var langs = i18n.langs
 var defaultLang = i18n.default
+var slugHandler = require('../lib/slugHandler.js')
 
 //var myStorage = require('../lib/myStorage.js');
 
 var Page = new keystone.List('Page', {
 	map: { name: 'title.es' },
-	autokey: { path: 'key', from: 'title.es', unique: true },
+	//autokey: { path: 'key', from: 'title.es', unique: true },
     defaultSort: '-createdAt'
 });
 
@@ -19,6 +20,8 @@ Page.add(
 			{ label: 'Borrador', value: 'draft' }
 		]},
 		title: { label: "Título", type: Types.I18nText, langs: langs, defaultLang: defaultLang, required: true, initial: true },
+		slug: { label: "Clave de enlace", note: 'Texto que se usará en las URLs', type: Types.I18nText, langs: langs, defaultLang: defaultLang},
+
 		position: { label: "Posición especial", type: Types.Select, options: 'none, home, cookies, LOPD', default: "none"},
 		createdAt: { label: "Creado el", type: Date, default: Date.now },
 		//state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
@@ -75,6 +78,10 @@ Page.schema.pre('save', function(next, done) {
 	}
 
 });
+
+
+//# generar slugs
+slugHandler(Page, 'slug', 'title')
 
 /*
 Page.schema.virtual('content.full').get(function() {

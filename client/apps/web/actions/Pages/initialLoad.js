@@ -6,7 +6,7 @@ export default function (location, params, routeLang, req){
 
   return (dispatch, getState) => {
 
-  	return dispatch( single_get(location, params) ).then(() => {
+  	return dispatch( single_get(location,routeLang, params) ).then(() => {
 
       return dispatch( metaUpdateBySingle(getState().page) )
 
