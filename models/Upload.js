@@ -1,7 +1,10 @@
 var keystone = require('keystone');
 var Types = keystone.Field.Types;
 var myStorage = require('../lib/myStorage.js');
-var exec = require('child_process').exec;
+//var exec = require('child_process').exec;
+var fs = require('fs');
+var Errio = require('errio');
+var glob = require("glob")
 var i18n = require('../config.js').i18n
 var langs = i18n.langs
 var defaultLang = i18n.default
@@ -98,14 +101,67 @@ Upload.schema.pre('save', function(next, done) {
 
 //# after remove -> delete file
 Upload.schema.post('remove', function(doc) {
-
+  /*
   exec('rm public/uploads/'+doc.file.filename, function(err, stdout, stderr) { //+'.*'
     if (err) { 
         console.log('child process exited with error code ' + err.code); 
         return; 
     } 
     console.log(stdout); 
-  });
+  });*/
+
+  var Log = keystone.list('Log').model;
+
+  var unlink = function(path){
+
+    return new Promise((resolve, reject) => {
+
+      fs.unlink(path, function(err){
+
+        if(err) return reject(err)
+
+        resolve()
+
+      });
+
+    })
+  }
+
+  var globPromise = function(path, options = null){
+
+    return new Promise((resolve, reject) => {
+
+      glob(path, options, function(err, files){
+
+        if(err) return reject(err)
+
+        resolve(files)
+
+      });
+
+    })
+  }
+
+  var filename = doc._id;//doc.file.filename
+
+  //# remove file
+  unlink('public/uploads/'+filename).then(() => {
+
+    //# find cache files
+    return globPromise('cache/uploads/'+filename+'*')
+
+  }).then(files => {
+
+    //# remove cache files
+    return Promise.all(files.map(f => unlink(f)))
+
+  }).catch(err => {
+
+    var errorMSG = `Error removing img '${filename}' : '${Errio.stringify(err)}'`;
+
+    Log.create({message: errorMSG, type: 'error'})
+
+  })
 
 });
 
