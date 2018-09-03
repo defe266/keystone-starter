@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import i18nURL from 'client/lib/i18nURL';
 
 var sd = require('sharify').data;
 var I18N = sd.I18N;
@@ -18,22 +19,34 @@ var LangSelector = React.createClass({
     const langSelected = props.lang;
     var pathname = props.pathname;
 
-    if(!pathname) return <span/>
+    if(!pathname && !props.slugs) return <span/>
 
-    if(langSelected == I18N.default){
+    //# modo multislug vs pure url
+    if(props.slugs){
 
-		var defaultPathname = pathname;
+      var defaultPathname = props.slugs;
 
-	}else{
+    }else{
 
-		var pathname_parts = pathname.split('/');
+    	if(langSelected == I18N.default){
 
-		pathname_parts.shift();
-		pathname_parts.shift();
+			var defaultPathname = pathname;
 
-		var defaultPathname = '/' + pathname_parts.join('/');
+		}else{
 
-	}
+			var pathname_parts = pathname.split('/');
+
+			pathname_parts.shift();
+			pathname_parts.shift();
+
+			var defaultPathname = '/' + pathname_parts.join('/');
+
+		}
+
+    }
+
+
+    
 
 
 	var icon = '';
@@ -65,9 +78,7 @@ var LangSelector = React.createClass({
 
 					if(lang == langSelected) return null
 
-					var langPath = lang == I18N.default ? '' : '/'+lang
-
-					var url = langPath + defaultPathname;
+					var url = i18nURL(defaultPathname, lang)
 
 					var icon = '';
 					var text = '';
@@ -104,7 +115,8 @@ export default connect((state, ownProps) => {
   return {
 
    lang : state.i18nState.lang,
-   pathname: state.routing.locationBeforeTransitions ? state.routing.locationBeforeTransitions.pathname : null
+   pathname: state.routing.locationBeforeTransitions ? state.routing.locationBeforeTransitions.pathname : null,
+   slugs: state.head.slugs,
 
   }
 

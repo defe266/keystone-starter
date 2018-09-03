@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Head from '../../../../organisms/Head';
 import Layout from '../../../../layouts/Standar';
 import TextI18n from 'client/components/atoms/TextI18n';
 import Icon from 'client/components/atoms/Icon';
@@ -26,6 +27,9 @@ var Page = React.createClass({
     return (
 
       <Layout className="Page">
+        
+        <Head/>
+
         <div className="TemplateStandar">
 
             <Slider className="SliderCover" items={item.slider} fixedHeight indicators={false} prevIcon={<Icon name="angle-double-left"/>} nextIcon={<Icon name="angle-double-right"/>}/>

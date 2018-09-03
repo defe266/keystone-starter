@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Head from '../../../../organisms/Head';
 import Layout from '../../../../layouts/Standar';
 import TextI18n from 'client/components/atoms/TextI18n';
 
@@ -21,6 +22,8 @@ var Page = React.createClass({
 
       <Layout className="Page">
 
+        <Head/>
+        
         <div className="TemplateStandar">
 
             <div className="container">

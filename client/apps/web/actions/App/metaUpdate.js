@@ -1,4 +1,4 @@
-export default function (title, description, noIndex){
+export default function (title, description, noIndex, slugs){
 
 	return (dispatch, getState) => {
 
@@ -7,7 +7,8 @@ export default function (title, description, noIndex){
 		var update = {
 			title: '',
 			description: '',
-			noIndex: false
+			noIndex: false,
+			slugs: null,
 		}
 
 		if(title){
@@ -37,6 +38,12 @@ export default function (title, description, noIndex){
 		if(typeof noIndex !== 'undefined'){
 
 			update.noIndex = noIndex;
+		}
+
+
+		if(typeof slugs !== 'undefined'){
+
+			update.slugs = slugs;
 		}
 
 		return dispatch({type: 'HEAD_UPDATE', data: update});

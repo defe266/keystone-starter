@@ -24,19 +24,27 @@ var Head = React.createClass({
 
     var pathname = location.pathname;// + location.search;
 
-    if(langSelected == I18N.default){
+    //# modo multislug vs pure url
+    if(props.slugs){
 
-      var defaultPathname = pathname;
+      var defaultPathname = props.slugs;
 
     }else{
 
-      var pathname_parts = pathname.split('/');
+      if(langSelected == I18N.default){
 
-      pathname_parts.shift();
-      pathname_parts.shift();
+        var defaultPathname = pathname;
 
-      var defaultPathname = '/' + pathname_parts.join('/');
+      }else{
 
+        var pathname_parts = pathname.split('/');
+
+        pathname_parts.shift();
+        pathname_parts.shift();
+
+        var defaultPathname = '/' + pathname_parts.join('/');
+
+      }
     }
 
 

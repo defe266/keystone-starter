@@ -69,7 +69,7 @@ var Page = React.createClass({
     const values = props.values;
     const errors = props.errors;
 
-console.log('props.loading',props.sending)
+
     return (
 
 
