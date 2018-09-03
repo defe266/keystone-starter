@@ -17,16 +17,16 @@ export default function (context){
 
 		var errors = {};
 
-		if(!validators.isEmail(data.email)) errors.email = [context.t('Email inválido')];
-		if(data.name == '') errors.name = [context.t('Requerido')];
-		if(data.email == '') errors.email = [context.t('Requerido')];
-		if(!data.polPrivacy) errors.polPrivacy = [context.t('Requerido')];
+		if(!validators.isEmail(data.email)) errors.email = [context.__('Email inválido')];
+		if(data.name == '') errors.name = [context.__('Requerido')];
+		if(data.email == '') errors.email = [context.__('Requerido')];
+		if(!data.polPrivacy) errors.polPrivacy = [context.__('Requerido')];
 
 
 
 		if (Object.keys(errors).length !== 0){
 
-			Growl(context.t('El formulario contiene errores'), 'danger');
+			Growl(context.__('El formulario contiene errores'), 'danger');
 
 			return dispatch({type: 'FORM_'+id+'_ERRORS', data: errors})
 		}
@@ -47,7 +47,7 @@ export default function (context){
 			//dispatch({type: 'FORM_'+id+'_SEND_END'});
 			dispatch({type: 'FORM_'+id+'_RESET'});
 
-			Growl(context.t('Mensaje enviado'), 'success');
+			Growl(context.__('Mensaje enviado'), 'success');
 
 
 		}, (err) => {
@@ -63,7 +63,7 @@ export default function (context){
 
 	        }else{
 
-	        	Growl(context.t('Error. Inténtalo de nuevo'), 'danger');
+	        	Growl(context.__('Error. Inténtalo de nuevo'), 'danger');
 	        }
 			
 

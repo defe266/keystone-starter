@@ -30,7 +30,7 @@
     "react-dom": "^15.3.0",
     "react-datepicker":"0.41.1",
     "react-helmet":"5.0.3",
-    "redux-i18n":"1.2.1",
+    "redux-i18n":"1.5.12",
     "react-leaflet":"1.1.0",
     "react-redux": "^4.4.5",
     "react-router": "3.0.2",
@@ -80,9 +80,9 @@
     "npm": "4.1.2"
   },
   "scripts": {
-    "start": "node keystone.js",
+    "start": "node --optimize_for_size --max_old_space_size=240 --gc_interval=100 keystone.js",
     "unlink": "npm unlink keystone",
-    "extract": "i18n_extract --source=client",
+    "extract": "i18n_extract --source=client,lib,models,routes,templates --fexts=js,jsx,ejs --pattern=__",
     "import": "i18n_import --translations=."
   },
   "main": "keystone.js"

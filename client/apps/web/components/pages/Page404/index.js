@@ -9,15 +9,15 @@ import Head from '../../organisms/Head';
 var Page404 = React.createClass({
 
   contextTypes: {
-    t: React.PropTypes.func.isRequired
+    __: React.PropTypes.func.isRequired
   },
 
   componentWillMount: function(){
 
     this.props.dispatch({type:'HEAD_UPDATE', data: {
 
-      title: this.context.t("Error 404"),
-      description: this.context.t("Parece que no podemos encontrar lo que estás buscando."),
+      title: this.context.__("Error 404"),
+      description: this.context.__("Parece que no podemos encontrar lo que estás buscando."),
       noIndex: true
     }})
   },
@@ -37,10 +37,10 @@ var Page404 = React.createClass({
           <div className="containerStandar">
 
             <div className="headerStandar">
-              <h1 className="titleStandar">{this.context.t("Error 404")}</h1>
+              <h1 className="titleStandar">{this.context.__("Error 404")}</h1>
             </div>
 
-           {this.context.t("Parece que no podemos encontrar lo que estás buscando.")}
+           {this.context.__("Parece que no podemos encontrar lo que estás buscando.")}
 
           </div>
 

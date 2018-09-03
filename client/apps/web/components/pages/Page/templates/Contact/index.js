@@ -29,7 +29,7 @@ var Page = React.createClass({
   },
 
   contextTypes: {
-    t: React.PropTypes.func.isRequired
+    __: React.PropTypes.func.isRequired
   },
 
   componentDidMount (){
@@ -102,7 +102,7 @@ console.log('props.loading',props.sending)
 
                           <Col md={6}>
 
-                            <FormGroup label={this.context.t("Su nombre *")} errors={errors.name}>
+                            <FormGroup label={this.context.__("Su nombre *")} errors={errors.name}>
                               <input type="text" className="form-control" value={values.name} onChange={(e) => this.update({name : e.target.value})}/>
                             </FormGroup>
 
@@ -110,7 +110,7 @@ console.log('props.loading',props.sending)
 
                           <Col md={6}>
 
-                            <FormGroup label={this.context.t("Su e-mail *")} errors={errors.email}>
+                            <FormGroup label={this.context.__("Su e-mail *")} errors={errors.email}>
                               <input type="text" className="form-control" value={values.email} onChange={(e) => this.update({email : e.target.value})}/>
                             </FormGroup>
                             
@@ -118,11 +118,11 @@ console.log('props.loading',props.sending)
 
                           <Col md={12}>
 
-                            <FormGroup label={this.context.t("Asunto")}>
+                            <FormGroup label={this.context.__("Asunto")}>
                               <input type="text" className="form-control" value={values.subject} onChange={(e) => this.update({subject : e.target.value})}/>
                             </FormGroup>
 
-                            <FormGroup label={this.context.t("Su mensaje")}>
+                            <FormGroup label={this.context.__("Su mensaje")}>
                               <textarea type="text" className="form-control" rows="8" value={values.message} onChange={(e) => this.update({message : e.target.value})}/>
                             </FormGroup>
 
@@ -131,14 +131,14 @@ console.log('props.loading',props.sending)
                               <FormGroup errors={errors.polPrivacy}>
 
                                 <Checkbox checked={values.polPrivacy} onChange={(e) => this.update({polPrivacy : e.target.checked})}>
-                                  {this.context.t('Acepto')} <a href={i18nURL("/"+props.LOPD.key, props.lang)} target="_blank">{this.context.t('Política de Privacidad')}</a>
+                                  {this.context.__('Acepto')} <a href={i18nURL("/"+props.LOPD.key, props.lang)} target="_blank">{this.context.__('Política de Privacidad')}</a>
                                 </Checkbox>
 
                               </FormGroup>
 
                             :null}
 
-                            <ButtonLoader loading={props.sending} className="btn btn-primary btn-lg" onClick={this.submit}>{this.context.t("Enviar")}</ButtonLoader>
+                            <ButtonLoader loading={props.sending} className="btn btn-primary btn-lg" onClick={this.submit}>{this.context.__("Enviar")}</ButtonLoader>
                             
                           </Col>
 

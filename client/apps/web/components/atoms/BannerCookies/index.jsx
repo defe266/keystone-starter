@@ -19,7 +19,7 @@ require('./index.css');
 var BannerCookies = React.createClass({
 
 	contextTypes: {
-	    t: React.PropTypes.func.isRequired
+	    __: React.PropTypes.func.isRequired
 	  },
 
 	acceptCookies: function(){
@@ -68,9 +68,9 @@ var BannerCookies = React.createClass({
 
 					{/*__( 'This site uses cookies to improve the services offered. If you continue with this browsing session, we consider that you accept the use.' )*/}
 
-					{this.context.t('Este sitio usa cookies para mejorar su rendimiento. Si continúa navegando consideramos que acepta la política de cookies.')}
+					{this.context.__('Este sitio usa cookies para mejorar su rendimiento. Si continúa navegando consideramos que acepta la política de cookies.')}
 
-					&nbsp; <Link to={props.url}>{this.context.t('Leer más')}</Link>
+					&nbsp; <Link to={props.url}>{this.context.__('Leer más')}</Link>
 
 					&nbsp; &nbsp; <span className="BannerCookies__button" onClick={this.acceptCookies}><i className="fa fa-times"/></span>
 

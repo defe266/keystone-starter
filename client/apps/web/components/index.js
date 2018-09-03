@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import I18n from "redux-i18n"
+//import I18n from "redux-i18n"
+import I18n from "client/wrappers/I18n"
 import {translations} from "translations"
 
 
