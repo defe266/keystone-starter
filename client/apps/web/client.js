@@ -20,7 +20,39 @@ const store = configureStore(preloadedState);
 
 const history = syncHistoryWithStore(browserHistory, store);
 
+function NavitationHandler(error, redirectLocation, renderProps){
 
+	if(renderProps){
+
+		//# get correct route lang
+		var routeLang = renderProps.routes[1].lang ? renderProps.routes[1].lang : sd.I18N.default;
+
+		//# recuperamos todos los fetchData asociados a cada componente de la ruta cargada (funciones estáticas)
+		Promise.all(
+
+			renderProps.components.map((comp) => {
+
+				if(!comp.fetchData) return null;
+
+				//return comp.fetchData(store.dispatch, store.getState);
+				return store.dispatch( comp.fetchData(renderProps.location, renderProps.params, routeLang) ); ////, lang) );
+			})
+		)
+	}
+}
+
+
+//# listen navigation changes -> trigger components fetchData
+history.listen((location) => {
+
+	//# pedimos los recursos que declaren los componentes igual que en el servidor
+	if(location.action == 'POP' || location.action == 'PUSH'){
+
+		match({ location, routes }, NavitationHandler);
+
+	}
+})
+/*
 //# listen navigation changes -> trigger components fetchData
 history.listen((location) => {
 
@@ -68,7 +100,7 @@ history.listen((location) => {
 		});
 	}
 	
-})
+})*/
 
 
 //# Mount react app

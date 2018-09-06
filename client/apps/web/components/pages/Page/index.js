@@ -47,7 +47,14 @@ var Page = React.createClass({
     if(props.notFound) return <Page404/>
 
     if(props.loading) var notReady = <Loader/>
-    if(props.error) var notReady = <Alert bsStyle="danger">Se ha producido un error.</Alert>
+    if(props.error) var notReady = (
+
+      <div className="container">
+        <br/><br/><br/><br/>
+        <Alert bsStyle="danger">Se ha producido un error.</Alert>
+        <br/><br/><br/>
+      </div>
+    )
     
     if(!notReady){
 
