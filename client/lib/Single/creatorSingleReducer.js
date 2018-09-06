@@ -34,8 +34,8 @@ export default function(model){
 
         return Object.assign({}, state, {
           loading: false,
-          error: action.res.status != 404,
-          notFound: action.res.status == 404,
+          error: !action.res || action.res.status != 404,
+          notFound: action.res && action.res.status == 404,
         });
 
       case model.toUpperCase()+'_SINGLE_PUT':
