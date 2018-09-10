@@ -42,11 +42,15 @@ function NavitationHandler(error, redirectLocation, renderProps){
 }
 
 
+
+
 //# listen navigation changes -> trigger components fetchData
+var clientNavitations = 0;
+
 history.listen((location) => {
 
 	//# pedimos los recursos que declaren los componentes igual que en el servidor
-	if(location.action == 'POP' || location.action == 'PUSH'){
+	if(clientNavitations > 0){//if(location.action == 'POP' || location.action == 'PUSH'){
 
 		match({ location, routes }, NavitationHandler);
 
