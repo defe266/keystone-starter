@@ -53,8 +53,9 @@ history.listen((location) => {
 	if(clientNavitations > 0){//if(location.action == 'POP' || location.action == 'PUSH'){
 
 		match({ location, routes }, NavitationHandler);
-
 	}
+
+	clientNavitations++;
 })
 /*
 //# listen navigation changes -> trigger components fetchData
