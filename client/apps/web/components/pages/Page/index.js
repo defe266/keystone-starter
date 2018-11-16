@@ -91,7 +91,7 @@ Page.fetchData = (location, params, routeLang, req) => {
 
       if(Component.fetchData){
 
-        return dispatch( fetchData(location, params, req) )
+        return dispatch( Component.fetchData(location, params, req) )
       }
 
     })

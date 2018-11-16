@@ -57,7 +57,7 @@ var Head = React.createClass({
             <title>{props.title}</title>
             <meta name="description" content={props.description} />
 
-            {props.noIndex || process.env.NODE_ENV == 'development' ? <meta name="robots" content="noindex"/> : null}
+            {props.noIndex || process.env.NODE_ENV == 'development' || sd.NOINDEX == 'true' ? <meta name="robots" content="noindex"/> : null}
 
 
             <link rel="canonical" href={sd.SERVER_URL + pathname} />

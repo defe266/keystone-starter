@@ -24,6 +24,7 @@ require.extensions['.styl'] = function() {return null}
 var sd = sharify.data = {
 
 	SERVER_URL: process.env.NODE_ENV == 'development' ? process.env.SERVER_ADDR_DEV : process.env.SERVER_ADDR,
+	NOINDEX: process.env.NOINDEX,
 	NODE_ENV: process.env.NODE_ENV,
 	I18N: config.i18n
 };
