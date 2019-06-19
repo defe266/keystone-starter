@@ -118,12 +118,6 @@ var LayoutStandar = React.createClass({
 
 					<div className="flex-wrapper">
 
-						{positions.data.cookies ? 
-
-							<BannerCookies url={"/"+positions.data.cookies.key}/>
-
-						:null}
-
 
 						<div className="flex-header">
 
@@ -172,6 +166,12 @@ var LayoutStandar = React.createClass({
 
 
 				    </div>
+
+				    {positions.data.cookies ? 
+
+						<BannerCookies url={"/"+positions.data.cookies.key}/>
+
+					:null}
 					
 
 					{/*<div className="flex-footer">Footer</div>*/}
