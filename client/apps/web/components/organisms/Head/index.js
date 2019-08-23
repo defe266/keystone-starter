@@ -47,6 +47,11 @@ var Head = React.createClass({
       }
     }
 
+    //# remove trailing slash 
+    if(typeof defaultPathname === 'string' && defaultPathname.substr(-1) == '/') {
+
+      defaultPathname = defaultPathname.slice(0, -1);
+    }
 
     return (
 
@@ -65,7 +70,7 @@ var Head = React.createClass({
 
             {I18N.langs.map((lang, index) => {
 
-              if(lang == langSelected) return null
+              //if(lang == langSelected) return null
 
               return <link rel="alternate" hreflang={lang} href={sd.SERVER_URL + i18nURL(defaultPathname, lang)} />
 

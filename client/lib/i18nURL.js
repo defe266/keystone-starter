@@ -4,7 +4,7 @@ var I18N = sd.I18N;
 
 export default function i18nURL(defaultPathname, langSelected) {
 
-	if(!defaultPathname || !langSelected) return '/'
+	if((!defaultPathname && defaultPathname != '') || !langSelected) return '/'
 
 	var path = defaultPathname;
 

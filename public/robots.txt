@@ -1,0 +1,8 @@
+User-agent: *
+Crawl-delay: 10
+
+Disallow: /keystone/
+Disallow: /api/
+Disallow: /embeds/
+Allow: /assets/
+Disallow: /*?*
